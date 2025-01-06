@@ -59,14 +59,14 @@ function App() {
           <p className="text-xl text-gray-600 mb-8">
             Empowering small businesses with enterprise-grade digital solutions. From web development to automation, we're your one-stop tech partner.
           </p>
-          <a 
-            href="https://cal.com/audie-malloggia-3jwiix/"
-            target="_blank"
-            rel="noopener noreferrer" 
-            className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold inline-flex items-center hover:bg-blue-700 transition-colors"
+          <button
+            onClick={() => {
+              document.getElementById('ready-to-transform')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold inline-flex items-center hover:bg-blue-700 transition-colors cursor-pointer"
           >
             Get Started <ChevronRight className="ml-2 h-5 w-5" />
-          </a>
+          </button>
         </motion.div>
       </header>
 
@@ -145,27 +145,42 @@ function App() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
+      <section className="py-20" id="ready-to-transform">
         <div className="container mx-auto px-6">
           <div className="bg-blue-600 rounded-2xl p-12 text-center text-white">
             <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Business ?</h2>
             <p className="text-lg mb-8 max-w-2xl mx-auto">
               Let's discuss how our toolbox can help your company grow in the digital age.
             </p>
-            <div className="relative inline-block">
-              <button onClick={() => window.open('https://cal.com/audie-malloggia-3jwiix/')} className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-                Schedule a Consultation
-              </button>
-              <div className="absolute -top-8 -right-12 transform rotate-12">
-                <div className="bg-gradient-to-b from-amber-700 to-amber-900 text-white px-4 py-2 rounded border-2 border-amber-950 shadow-lg" 
-                     style={{
-                       fontFamily: "'Comic Sans MS', cursive",
-                       textShadow: '1px 1px 0 rgba(0,0,0,0.3)',
-                       boxShadow: '2px 2px 5px rgba(0,0,0,0.2)'
-                     }}>
-                  <span className="text-sm font-bold whitespace-nowrap">It's free !</span>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="relative">
+                <button 
+                  onClick={() => window.open('https://cal.com/audie-malloggia-3jwiix/')} 
+                  className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
+                >
+                  Schedule a Consultation
+                </button>
+                <div className="absolute -top-8 -right-12 transform rotate-12">
+                  <div className="bg-gradient-to-b from-amber-700 to-amber-900 text-white px-4 py-2 rounded border-2 border-amber-950 shadow-lg" 
+                       style={{
+                         fontFamily: "'Comic Sans MS', cursive",
+                         textShadow: '1px 1px 0 rgba(0,0,0,0.3)',
+                         boxShadow: '2px 2px 5px rgba(0,0,0,0.2)'
+                       }}>
+                    <span className="text-sm font-bold whitespace-nowrap">It's free !</span>
+                  </div>
                 </div>
               </div>
+              <span className="text-lg font-medium">or</span>
+              <button 
+                onClick={() => window.location.href = 'mailto:audie@app2b.io?subject=Prestation'}
+                className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center gap-2"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                Send us a message
+              </button>
             </div>
           </div>
         </div>
@@ -218,7 +233,7 @@ function App() {
   );
 }
 
-function ServiceCard({ icon, title, description, features, bgColor }) {
+function ServiceCard({ icon, title, description, features, bgColor }: { icon: React.ReactNode; title: string; description: string; features: string[]; bgColor: string }) {
   return (
     <div className="group relative overflow-hidden rounded-2xl bg-white shadow-xl transition-all hover:shadow-2xl">
       <div className={`absolute inset-0 bg-gradient-to-br ${bgColor} opacity-90 transition-all group-hover:opacity-100`}></div>
@@ -237,9 +252,7 @@ function ServiceCard({ icon, title, description, features, bgColor }) {
           ))}
         </ul>
         <a
-          href="https://cal.com/audie-malloggia-3jwiix/"
-          target="_blank" 
-          rel="noopener noreferrer"
+          href="#ready-to-transform"
           className="mt-8 bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 inline-flex items-center group-hover:scale-105"
         >
           Get Started Now <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
