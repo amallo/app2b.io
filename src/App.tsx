@@ -40,13 +40,17 @@ function App() {
             <span className="text-blue-600">app2b</span>
             <span className="relative inline-block ml-3 transform rotate-2 group hover:scale-110 transition-all duration-300">
               <span className="absolute -rotate-3 text-gray-800/10 select-none transition-all duration-300 group-hover:-rotate-6" 
-                style={{textShadow: '2px 2px 0 rgba(0,0,0,0.1)'}}>
+                style={{
+                  textShadow: '3px 3px 6px rgba(0,0,0,0.2)',
+                  fontFamily: "'Poppins', sans-serif"
+                }}>
                 Digital Toolbox
               </span>
               <span className="relative inline-block text-gray-900 border-4 border-gray-900 px-4 py-1 rounded-lg transition-all duration-300 group-hover:rotate-4" 
                 style={{
-                  textShadow: '2px 2px 0 rgba(0,0,0,0.1)',
-                  WebkitTextStroke: '2px black',
+                  textShadow: '2px 2px 4px rgba(0,0,0,0.2)',
+                  WebkitTextStroke: '1.5px black',
+                  fontFamily: "'Poppins', sans-serif"
                 }}>
                 Digital Toolbox
               </span>
@@ -55,9 +59,14 @@ function App() {
           <p className="text-xl text-gray-600 mb-8">
             Empowering small businesses with enterprise-grade digital solutions. From web development to automation, we're your one-stop tech partner.
           </p>
-          <button className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold inline-flex items-center hover:bg-blue-700 transition-colors">
+          <a 
+            href="https://cal.com/audie-malloggia-3jwiix/"
+            target="_blank"
+            rel="noopener noreferrer" 
+            className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold inline-flex items-center hover:bg-blue-700 transition-colors"
+          >
             Get Started <ChevronRight className="ml-2 h-5 w-5" />
-          </button>
+          </a>
         </motion.div>
       </header>
 
@@ -139,12 +148,12 @@ function App() {
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="bg-blue-600 rounded-2xl p-12 text-center text-white">
-            <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Business?</h2>
+            <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Business ?</h2>
             <p className="text-lg mb-8 max-w-2xl mx-auto">
               Let's discuss how our toolbox can help your company grow in the digital age.
             </p>
             <div className="relative inline-block">
-              <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+              <button onClick={() => window.open('https://cal.com/audie-malloggia-3jwiix/')} className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
                 Schedule a Consultation
               </button>
               <div className="absolute -top-8 -right-12 transform rotate-12">
@@ -154,7 +163,7 @@ function App() {
                        textShadow: '1px 1px 0 rgba(0,0,0,0.3)',
                        boxShadow: '2px 2px 5px rgba(0,0,0,0.2)'
                      }}>
-                  <span className="text-sm font-bold whitespace-nowrap">It's free!</span>
+                  <span className="text-sm font-bold whitespace-nowrap">It's free !</span>
                 </div>
               </div>
             </div>
@@ -220,16 +229,21 @@ function ServiceCard({ icon, title, description, features, bgColor }) {
         <h3 className="text-2xl font-bold mb-4">{title}</h3>
         <p className="mb-8 opacity-90">{description}</p>
         <ul className="space-y-3">
-          {features.map((feature, index) => (
+          {features.map((feature: string, index: number) => (
             <li key={index} className="flex items-center">
               <ArrowRight className="h-4 w-4 mr-2" />
               {feature}
             </li>
           ))}
         </ul>
-        <button className="mt-8 bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 inline-flex items-center group-hover:scale-105">
+        <a
+          href="https://cal.com/audie-malloggia-3jwiix/"
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="mt-8 bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 inline-flex items-center group-hover:scale-105"
+        >
           Get Started Now <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-        </button>
+        </a>
       </div>
     </div>
   );
