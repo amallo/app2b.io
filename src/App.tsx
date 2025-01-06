@@ -160,14 +160,14 @@ function App() {
                 >
                   Schedule a Consultation
                 </button>
-                <div className="absolute -top-8 -right-12 transform rotate-12">
-                  <div className="bg-gradient-to-b from-amber-700 to-amber-900 text-white px-4 py-2 rounded border-2 border-amber-950 shadow-lg" 
+                <div className="absolute -top-8 left-1/2 -translate-x-1/2 transform -rotate-6 scale-90">
+                  <div className="bg-gradient-to-b from-amber-700 to-amber-900 text-white px-3 py-1.5 rounded border-2 border-amber-950 shadow-lg" 
                        style={{
                          fontFamily: "'Comic Sans MS', cursive",
                          textShadow: '1px 1px 0 rgba(0,0,0,0.3)',
                          boxShadow: '2px 2px 5px rgba(0,0,0,0.2)'
                        }}>
-                    <span className="text-sm font-bold whitespace-nowrap">It's free !</span>
+                    <span className="text-xs font-bold whitespace-nowrap">It's free !</span>
                   </div>
                 </div>
               </div>
@@ -200,27 +200,36 @@ function App() {
               </p>
             </div>
             <div>
-              <h3 className="font-bold text-white mb-4">Services</h3>
+              <h3 className="font-bold text-white mb-4">Contact</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white">Web Development</a></li>
-                <li><a href="#" className="hover:text-white">Mobile Apps</a></li>
-                <li><a href="#" className="hover:text-white">Automation</a></li>
+                <li><a href="mailto:audie@app2b.io" className="hover:text-white">audie@app2b.io</a></li>
+                <li><a href="https://cal.com/audie-malloggia-3jwiix/" className="hover:text-white">Book a meeting</a></li>
               </ul>
             </div>
             <div>
-              <h3 className="font-bold text-white mb-4">Resources</h3>
+              <h3 className="font-bold text-white mb-4">Données personnelles</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white">Blog</a></li>
-                <li><a href="#" className="hover:text-white">Documentation</a></li>
-                <li><a href="#" className="hover:text-white">Support</a></li>
+                <li><a href="#" className="hover:text-white">Politique de confidentialité</a></li>
+                <li><a href="#" className="hover:text-white">Protection des données (RGPD)</a></li>
+                <li><a href="#" className="hover:text-white">Mentions légales</a></li>
+                <li><a href="#" className="hover:text-white">Gestion des cookies</a></li>
               </ul>
             </div>
             <div>
               <h3 className="font-bold text-white mb-4">Connect</h3>
               <ul className="space-y-2">
-                <li><a href="https://x.com/app2bdev" className="hover:text-white">Twitter</a></li>
-                <li><a href="#" className="hover:text-white">LinkedIn</a></li>
-                <li><a href="#" className="hover:text-white">GitHub</a></li>
+                <li><a href="https://x.com/app2bdev" className="hover:text-white flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                  
+                </a></li>
+                <li><a href="#" className="hover:text-white flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                  LinkedIn
+                </a></li>
               </ul>
             </div>
           </div>
