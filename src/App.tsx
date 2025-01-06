@@ -113,9 +113,21 @@ function App() {
             <p className="text-lg mb-8 max-w-2xl mx-auto">
               Let's discuss how our toolbox can help your company grow in the digital age.
             </p>
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-              Schedule a Consultation
-            </button>
+            <div className="relative inline-block">
+              <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                Schedule a Consultation
+              </button>
+              <div className="absolute -top-8 -right-12 transform rotate-12">
+                <div className="bg-gradient-to-b from-amber-700 to-amber-900 text-white px-4 py-2 rounded border-2 border-amber-950 shadow-lg" 
+                     style={{
+                       fontFamily: "'Comic Sans MS', cursive",
+                       textShadow: '1px 1px 0 rgba(0,0,0,0.3)',
+                       boxShadow: '2px 2px 5px rgba(0,0,0,0.2)'
+                     }}>
+                  <span className="text-sm font-bold whitespace-nowrap">It's free!</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -152,7 +164,7 @@ function App() {
             <div>
               <h3 className="font-bold text-white mb-4">Connect</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white">Twitter</a></li>
+                <li><a href="https://x.com/app2bdev" className="hover:text-white">Twitter</a></li>
                 <li><a href="#" className="hover:text-white">LinkedIn</a></li>
                 <li><a href="#" className="hover:text-white">GitHub</a></li>
               </ul>
@@ -185,15 +197,15 @@ function ServiceCard({ icon, title, description, features, bgColor }) {
             </li>
           ))}
         </ul>
-        <button className="mt-8 bg-white bg-opacity-20 px-6 py-2 rounded-full font-semibold hover:bg-opacity-30 transition-colors inline-flex items-center">
-          Learn More <ArrowRight className="ml-2 h-4 w-4" />
+        <button className="mt-8 bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 inline-flex items-center group-hover:scale-105">
+          Get Started Now <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
         </button>
       </div>
     </div>
   );
 }
 
-function FeatureCard({ icon, title, description }) {
+function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
   return (
     <div className="text-center">
       <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
