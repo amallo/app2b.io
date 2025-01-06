@@ -1,11 +1,41 @@
 import { Code2, Smartphone, Workflow, ChevronRight, Globe2, Boxes, Users, Zap, ArrowRight } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 function App() {
+  const containerRef = useRef(null);
+  const { scrollY } = useScroll();
+  
+  const y1 = useTransform(scrollY, [0, 1000], [0, 200]);
+  const y2 = useTransform(scrollY, [0, 1000], [0, -200]);
+  const y3 = useTransform(scrollY, [0, 1000], [0, 100]);
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* Hero Section */}
-      <header className="container mx-auto px-6 py-16 md:py-24">
-        <div className="max-w-4xl mx-auto text-center">
+    <div ref={containerRef} className="min-h-screen bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      {/* Motifs géométriques en arrière-plan avec parallaxe */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div 
+          style={{ y: y1 }}
+          className="absolute -top-32 left-1/4 w-[500px] h-[500px] bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-80 animate-blob" 
+        />
+        <motion.div 
+          style={{ y: y2 }}
+          className="absolute -top-32 right-1/4 w-[400px] h-[400px] bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-80 animate-blob animation-delay-2000" 
+        />
+        <motion.div 
+          style={{ y: y3 }}
+          className="absolute -bottom-32 left-1/2 w-[450px] h-[450px] bg-emerald-200 rounded-full mix-blend-multiply filter blur-xl opacity-80 animate-blob animation-delay-4000" 
+        />
+      </div>
+
+      {/* Hero Section - Ajout d'animation */}
+      <header className="container mx-auto px-6 py-16 md:py-24 relative">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto text-center"
+        >
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 relative">
             <span className="text-blue-600">app2b</span>
             <span className="relative inline-block ml-3 transform rotate-2 group hover:scale-110 transition-all duration-300">
@@ -28,7 +58,7 @@ function App() {
           <button className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold inline-flex items-center hover:bg-blue-700 transition-colors">
             Get Started <ChevronRight className="ml-2 h-5 w-5" />
           </button>
-        </div>
+        </motion.div>
       </header>
 
       {/* Services Section */}
