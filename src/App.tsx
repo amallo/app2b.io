@@ -1,10 +1,14 @@
 import { Code2, Smartphone, Workflow, ChevronRight, Globe2, Boxes, Users, Zap, ArrowRight } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { translations } from './translations';
+import { useLanguage } from './hooks/useLanguage';
 
 function App() {
   const containerRef = useRef(null);
   const { scrollY } = useScroll();
+  const language = useLanguage();
+  const t = translations[language as keyof typeof translations];
   
   const y1 = useTransform(scrollY, [0, 1000], [0, 200]);
   const y2 = useTransform(scrollY, [0, 1000], [0, -200]);
@@ -57,7 +61,7 @@ function App() {
             </span>
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            Empowering small businesses with enterprise-grade digital solutions. From web development to automation, we're your one-stop tech partner.
+            {t.hero.subtitle}
           </p>
           <button
             onClick={() => {
@@ -65,7 +69,7 @@ function App() {
             }}
             className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold inline-flex items-center hover:bg-blue-700 transition-colors cursor-pointer"
           >
-            Get Started <ChevronRight className="ml-2 h-5 w-5" />
+            {t.hero.cta} <ChevronRight className="ml-2 h-5 w-5" />
           </button>
         </motion.div>
       </header>
