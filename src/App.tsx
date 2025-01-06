@@ -125,12 +125,13 @@ function App() {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="font-bold text-white mb-4">Company</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white">About</a></li>
-                <li><a href="#" className="hover:text-white">Careers</a></li>
-                <li><a href="#" className="hover:text-white">Contact</a></li>
-              </ul>
+              <h3 className="font-bold text-white mb-4">Société</h3>
+              <p className="text-gray-300">
+                APP2B<br />
+                25 rue Pierre Bérégovoy<br />
+                92110 Clichy<br />
+                France
+              </p>
             </div>
             <div>
               <h3 className="font-bold text-white mb-4">Services</h3>
