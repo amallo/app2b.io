@@ -1,4 +1,4 @@
-import { Code2, Smartphone, Workflow, ChevronRight, Globe2, Boxes, Users, Zap, ArrowRight } from 'lucide-react';
+import {Shield, Code2, Smartphone, Workflow, ChevronRight, Globe2, Boxes, Users, Zap, ArrowRight } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { translations } from './translations';
@@ -63,6 +63,20 @@ function App() {
           <p className="text-xl text-gray-600 mb-8">
             {t.hero.subtitle}
           </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="font-semibold text-lg mb-2 text-blue-600">Transparence Totale</h3>
+              <p className="text-gray-600">Pas d'effet tunnel : WhatsApp, Slack, Discord, emails, téléphone... Suivez l'avancée de votre projet</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="font-semibold text-lg mb-2 text-blue-600">Qualité Garantie</h3>
+              <p className="text-gray-600">Pas de bugs : vous avez payé pour un produit fini et fonctionnel </p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="font-semibold text-lg mb-2 text-blue-600">Budget Maîtrisé</h3>
+              <p className="text-gray-600">Pas de coûts cachés : nous respectons nos engagements, le budget convenu en fait partie</p>
+            </div>
+          </div>
           <button
             onClick={() => {
               document.getElementById('ready-to-transform')?.scrollIntoView({ behavior: 'smooth' });
@@ -77,72 +91,165 @@ function App() {
       {/* Services Section */}
       <section className="py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-16">Our Services</h2>
+          <h2 className="text-3xl font-bold text-center mb-16">{t.services.title}</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <ServiceCard
               icon={<Globe2 className="h-12 w-12 hover:animate-spin hover:text-blue-400 transition-all duration-300" />}
-              title="Web Design & Development"
-              description="Beautiful, responsive websites that convert visitors into customers. Built with modern technologies for optimal performance."
+              title="Site vitrine"
+              description="Des sites web élégants et réactifs qui convertissent les visiteurs en clients."
               features={[
-                "Custom Web Applications",
-                "E-commerce Solutions",
-                "Progressive Web Apps",
-                "SEO Optimization"
+                "Environ 10 pages",
+                "Choisissez vos fonctionnalités",
+                "SEO (référencement naturel)",
+                "Déploiement sur votre hébergeur préféré",
               ]}
               bgColor="from-blue-500 to-blue-600"
+              cta="A partir de 1000€ H.T"
             />
             <ServiceCard
               icon={<Smartphone className="h-12 w-12 hover:animate-bounce hover:rotate-12 hover:text-purple-400 transition-all duration-300" />}
-              title="Mobile App Development"
-              description="Native and cross-platform mobile applications that provide seamless user experiences across all devices."
+              title={'Applications sur mesure'}
+              description={'Une application pour fidéliser vos clients, simplifier vos processus ou augmenter votre visibilité ? Nous le faisons parfaitement pour Android, iOS et sur le web.'}
               features={[
-                "iOS & Android Apps",
-                "Cross-platform Development",
-                "App Store Optimization",
-                "Mobile UI/UX Design"
+                "Développement iOS & Android",
+                "Ou développement Web",
+                "Hébergement sur votre hébergeur préféré",
               ]}
               bgColor="from-purple-500 to-purple-600"
+              cta="Discutons-en"
             />
             <ServiceCard
               icon={<Workflow className="h-12 w-12 hover:animate-pulse hover:rotate-180 hover:text-emerald-400 transition-all duration-700" />}
-              title="Automation Solutions"
-              description="Streamline your workflows with Make and n8n. Automate repetitive tasks and boost productivity."
+              title="Automatisation"
+              description="Gagnez du temps et optimisez votre activité avec des solutions d’automatisation sur mesure pour PME : facturation, relances, gestion client… nous simplifions votre quotidien."
               features={[
-                "Workflow Automation",
-                "API Integration",
-                "Custom Triggers",
-                "Data Synchronization"
+                "Collecte automatique de vos données",
+                "Déclenchement automatique",
+                "Synchronization de données"
               ]}
               bgColor="from-emerald-500 to-emerald-600"
+              cta="Discutons-en"
             />
           </div>
         </div>
       </section>
 
+      {/* About Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12">Qui sommes-nous ?</h2>
+            <div className="bg-white rounded-2xl p-8 shadow-xl">
+              <div className="space-y-6">
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Nous sommes deux ingénieurs passionnés par la technologie, avec une solide expérience acquise au sein de startups innovantes dans les domaines de la fintech et du legal tech.
+                </p>
+                <div className="flex items-start space-x-4 py-4">
+                  <div className="flex-shrink-0">
+                    <div className="bg-blue-100 p-3 rounded-lg">
+                      <Users className="h-6 w-6 text-blue-600" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Notre approche PME</h3>
+                    <p className="text-gray-700">
+                      Nous avons choisi de nous concentrer sur les PME car nous croyons en leur potentiel de transformation numérique. Notre expertise nous permet de leur apporter des solutions sur mesure, efficaces et abordables.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4 py-4">
+                  <div className="flex-shrink-0">
+                    <div className="bg-blue-100 p-3 rounded-lg">
+                      <Zap className="h-6 w-6 text-blue-600" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Notre philosophie</h3>
+                    <p className="text-gray-700">
+                      Nous privilégions les cycles de décision courts et la proximité avec nos clients. Notre objectif : produire des solutions de qualité qui ont un impact mesurable et significatif sur votre activité.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-16">Notre méthode</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-xl shadow-lg relative">
+              <div className="absolute -top-4 -left-4 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold">1</div>
+              <h3 className="text-xl font-bold mb-4 text-blue-600">Appel découverte</h3>
+              <p className="text-gray-600">Un échange de 30 minutes pour comprendre votre projet et confirmer que nous pouvons vous accompagner efficacement.</p>
+              
+              <div className="mt-6 text-center">
+                <button 
+                  onClick={() => {
+                    document.getElementById('ready-to-transform')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors"
+                >
+                  {t.hero.cta}
+                </button>
+                <p className="text-sm text-gray-500 mt-2">Prévoir 30mn</p>
+              </div>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-lg relative">
+              <div className="absolute -top-4 -left-4 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold">2</div>
+              <h3 className="text-xl font-bold mb-4 text-blue-600">Analyse approfondie</h3>
+              <p className="text-gray-600">Nous évaluons la meilleure solution technique adaptée à vos besoins et votre budget.</p>
+              <div className="mt-6 text-center">
+                <div className="bg-gray-100 text-gray-600 px-6 py-2 rounded-full inline-flex items-center">
+                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"/>
+                  </svg>
+                  Durée : 2-5 jours
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-lg relative">
+              <div className="absolute -top-4 -left-4 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold">3</div>
+              <h3 className="text-xl font-bold mb-4 text-blue-600">Proposition détaillée</h3>
+              <p className="text-gray-600">Présentation de la solution recommandée avec un planning de réalisation et un budget détaillé.</p>
+              <div className="mt-6 text-center">
+                <div className="bg-gray-100 text-gray-600 px-6 py-2 rounded-full inline-flex items-center">
+                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  Démarrage rapide
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* Features Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-16">Why Choose Us</h2>
-          <div className="grid md:grid-cols-4 gap-8">
+          <h2 className="text-3xl font-bold text-center mb-16">Pourquoi nous ?</h2>
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <FeatureCard
               icon={<Code2 className="h-6 w-6" />}
-              title="Modern Tech Stack"
-              description="Latest technologies for robust solutions"
+              title="Garantie à vie"
+              description="Nous corrigeons gratuitement les bugs de notre fait, sans limite dans le temps"
             />
             <FeatureCard
               icon={<Boxes className="h-6 w-6" />}
-              title="Scalable Solutions"
-              description="Grow your business without limitations"
+              title="Transparence totale"
+              description="Si nous ne pouvons pas vous aider, nous vous recommanderons un partenaire de confiance"
             />
             <FeatureCard
-              icon={<Users className="h-6 w-6" />}
-              title="Dedicated Support"
-              description="Expert team at your service"
-            />
-            <FeatureCard
-              icon={<Zap className="h-6 w-6" />}
-              title="Fast Delivery"
-              description="Quick turnaround on all projects"
+              icon={<Shield className="h-6 w-6" />}
+              title="Confidentialité"
+              description="Nous prenons à coeur les enjeux de confidentialité et de protection de la vie privée"
             />
           </div>
         </div>
@@ -152,9 +259,9 @@ function App() {
       <section className="py-20" id="ready-to-transform">
         <div className="container mx-auto px-6">
           <div className="bg-blue-600 rounded-2xl p-12 text-center text-white">
-            <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Business ?</h2>
+            <h2 className="text-3xl font-bold mb-6">Prêt à transformer votre entreprise ?</h2>
             <p className="text-lg mb-8 max-w-2xl mx-auto">
-              Let's discuss how our toolbox can help your company grow in the digital age.
+              Discutons ensemble de la façon dont nos outils peuvent aider.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <div className="relative">
@@ -162,7 +269,7 @@ function App() {
                   onClick={() => window.open('https://cal.com/audie-malloggia-3jwiix/')} 
                   className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
                 >
-                  Schedule a Consultation
+                  Planifier une consultation
                 </button>
                 <div className="absolute -top-8 left-1/2 -translate-x-1/2 transform -rotate-6 scale-90">
                   <div className="bg-gradient-to-b from-amber-700 to-amber-900 text-white px-3 py-1.5 rounded border-2 border-amber-950 shadow-lg" 
@@ -171,11 +278,11 @@ function App() {
                          textShadow: '1px 1px 0 rgba(0,0,0,0.3)',
                          boxShadow: '2px 2px 5px rgba(0,0,0,0.2)'
                        }}>
-                    <span className="text-xs font-bold whitespace-nowrap">It's free !</span>
+                    <span className="text-xs font-bold whitespace-nowrap">C'est gratuit !</span>
                   </div>
                 </div>
               </div>
-              <span className="text-lg font-medium">or</span>
+              <span className="text-lg font-medium">ou</span>
               <button 
                 onClick={() => window.location.href = 'mailto:audie@app2b.io?subject=Prestation'}
                 className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center gap-2"
@@ -183,7 +290,7 @@ function App() {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                 </svg>
-                Send us a message
+                Envoyez-nous un message
               </button>
             </div>
           </div>
@@ -218,15 +325,6 @@ function App() {
               </ul>
             </div>
             <div>
-              <h3 className="font-bold text-white mb-4">Privacy & Legal</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white">Data Protection (GDPR)</a></li>
-                <li><a href="#" className="hover:text-white">Legal Notice</a></li>
-                <li><a href="#" className="hover:text-white">Cookie Settings</a></li>
-              </ul>
-            </div>
-            <div>
               <h3 className="font-bold text-white mb-4">Connect</h3>
               <ul className="space-y-2">
                 <li><a href="https://x.com/app2bdev" className="hover:text-white flex items-center gap-2">
@@ -253,13 +351,13 @@ function App() {
   );
 }
 
-function ServiceCard({ icon, title, description, features, bgColor }: { icon: React.ReactNode; title: string; description: string; features: string[]; bgColor: string }) {
+function ServiceCard({ icon, title, description, features, bgColor, cta }: { icon: React.ReactNode; title: string; description: string; features: string[]; bgColor: string, cta: string }) {
   return (
     <div className="group relative overflow-hidden rounded-2xl bg-white shadow-xl transition-all hover:shadow-2xl">
       <div className={`absolute inset-0 bg-gradient-to-br ${bgColor} opacity-90 transition-all group-hover:opacity-100`}></div>
       <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full border-8 border-white/10 transform rotate-12" />
       <div className="absolute -left-12 -bottom-12 h-32 w-32 rounded-full border-8 border-white/10 transform -rotate-12" />
-      <div className="relative p-8 text-white">
+      <div className="relative p-8 text-white h-full flex flex-col">
         <div className="mb-6">{icon}</div>
         <h3 className="text-2xl font-bold mb-4">{title}</h3>
         <p className="mb-8 opacity-90">{description}</p>
@@ -271,12 +369,15 @@ function ServiceCard({ icon, title, description, features, bgColor }: { icon: Re
             </li>
           ))}
         </ul>
-        <a
-          href="#ready-to-transform"
-          className="mt-8 bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 inline-flex items-center group-hover:scale-105"
-        >
-          Get Started Now <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-        </a>
+        <div className="flex-grow"></div>
+        <div className="flex justify-center">
+          <a
+            href="#ready-to-transform"
+            className="mt-8 bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 inline-flex items-center group-hover:scale-105"
+          >
+            {cta}
+          </a>
+        </div>
       </div>
     </div>
   );

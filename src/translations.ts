@@ -1,28 +1,38 @@
 export const translations = {
   en: {
     hero: {
-      subtitle: "Empowering small businesses with enterprise-grade digital solutions. From web development to automation, we're your one-stop tech partner.",
-      cta: "Get Started"
+      subtitle: "Nous donnons aux petites entreprises des solutions numériques de niveau professionnel. Du développement web à l'automatisation, nous sommes votre partenaire technique unique.",
+      cta: "Commencer"
     },
     services: {
-      title: "Our Services",
+      title: "Nos Services",
       web: {
-        title: "Web Design & Development",
-        description: "Beautiful, responsive websites that convert visitors into customers. Built with modern technologies for optimal performance.",
+        title: "Conception & Développement Web",
+        description: "Des sites web élégants et réactifs qui convertissent les visiteurs en clients. Construits avec des technologies modernes pour des performances optimales.",
         features: [
-          "Custom Web Applications",
-          "E-commerce Solutions",
-          "Progressive Web Apps",
-          "SEO Optimization"
+          "Applications Web Sur Mesure",
+          "Solutions E-commerce", 
+          "Applications Web Progressives",
+          "Optimisation SEO"
         ]
       },
+      mobile: {
+        title: "Développement d'Applications Mobiles",
+        description: "Besoin d'une application mobile pour engager vos clients, simplifier vos processus ou augmenter votre visibilité ? Nous excellons dans la création d'applications pour <b>Android</b> et <b>iOS</b>. Discutons-en ensemble !",
+        features: [
+          "Applications iOS & Android",
+          "Développement Multiplateforme",
+          "Optimisation App Store",
+          "Optimisation SEO"
+        ]
+      }
       // ... autres services
     },
     // ... autres sections
   },
   fr: {
     hero: {
-      subtitle: "Des solutions numériques pour les PME & les petites entreprises. Du développement web à l'automatisation, nous sommes votre partenaire technique privilégié.",
+      subtitle: "Nous créons des solutions numériques sur mesure pour les PME et petites entreprises. Développement web, automatisation, et bien plus encore : faites confiance à votre partenaire technique dédié.",
       cta: "Commencer"
     },
     services: {
@@ -34,6 +44,16 @@ export const translations = {
           "Applications Web Sur Mesure",
           "Solutions E-commerce",
           "Applications Web Progressives",
+          "Optimisation SEO"
+        ]
+      },
+      mobile: {
+        title: "Développement d'applications mobiles",
+        description: "Besoin d’une application mobile pour fidéliser vos clients, simplifier vos processus ou augmenter votre visibilité ? Nous excellons dans la création d’applications pour Android et iOS. Discutons-en ensemble !",
+        features: [
+          "Applications iOS & Android",
+          "Développement multiplateforme",
+          "Optimisation de l'App Store",
           "Optimisation SEO"
         ]
       },
