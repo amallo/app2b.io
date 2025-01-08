@@ -1,10 +1,19 @@
+import type { MetaFunction } from "@remix-run/node";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "APP2B Toolbox" },
+    { name: "description", content: "Welcome to APP2B Toolbox !" },
+  ];
+};
 import {Shield, Code2, Smartphone, Workflow, ChevronRight, Globe2, Boxes, Users, Zap, ArrowRight } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import { translations } from './translations';
-import { useLanguage } from './hooks/useLanguage';
+import { translations } from '../translations';
+import { useLanguage } from '../hooks/useLanguage';
+import Process from '../components/process';
 
-function App() {
+export default function Index() {
   const containerRef = useRef(null);
   const { scrollY } = useScroll();
   const language = useLanguage();
@@ -65,15 +74,15 @@ function App() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="font-semibold text-lg mb-2 text-blue-600">Transparence Totale</h3>
-              <p className="text-gray-600">Pas d'effet tunnel : WhatsApp, Slack, Discord, emails, téléphone... Suivez l'avancée de votre projet</p>
+              <h3 className="font-semibold text-lg mb-2 text-blue-600">Transparence totale</h3>
+              <p className="text-gray-600">Pas d'effet tunnel : nous communiquons très régulièrement sur l'avancée de votre projet</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="font-semibold text-lg mb-2 text-blue-600">Qualité Garantie</h3>
+              <h3 className="font-semibold text-lg mb-2 text-blue-600">Qualité garantie</h3>
               <p className="text-gray-600">Pas de bugs : vous avez payé pour un produit fini et fonctionnel </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="font-semibold text-lg mb-2 text-blue-600">Budget Maîtrisé</h3>
+              <h3 className="font-semibold text-lg mb-2 text-blue-600">Budget maîtrisé</h3>
               <p className="text-gray-600">Pas de coûts cachés : nous respectons nos engagements, le budget convenu en fait partie</p>
             </div>
           </div>
@@ -142,7 +151,7 @@ function App() {
             <div className="bg-white rounded-2xl p-8 shadow-xl">
               <div className="space-y-6">
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Nous sommes deux ingénieurs passionnés par la technologie, avec une solide expérience acquise au sein de startups innovantes dans les domaines de la fintech et du legal tech.
+                Nous sommes deux ingénieurs passionnés par la technologie, forts de plus de 10 ans d'expérience dans la conception de solutions informatiques pour des startups innovantes et des grands comptes exigeants.
                 </p>
                 <div className="flex items-start space-x-4 py-4">
                   <div className="flex-shrink-0">
@@ -177,68 +186,23 @@ function App() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-16">Notre méthode</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-lg relative">
-              <div className="absolute -top-4 -left-4 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold">1</div>
-              <h3 className="text-xl font-bold mb-4 text-blue-600">Appel découverte</h3>
-              <p className="text-gray-600">Un échange de 30 minutes pour comprendre votre projet et confirmer que nous pouvons vous accompagner efficacement.</p>
-              
-              <div className="mt-6 text-center">
-                <button 
-                  onClick={() => {
-                    document.getElementById('ready-to-transform')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors"
-                >
-                  {t.hero.cta}
-                </button>
-                <p className="text-sm text-gray-500 mt-2">Prévoir 30mn</p>
-              </div>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-lg relative">
-              <div className="absolute -top-4 -left-4 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold">2</div>
-              <h3 className="text-xl font-bold mb-4 text-blue-600">Analyse approfondie</h3>
-              <p className="text-gray-600">Nous évaluons la meilleure solution technique adaptée à vos besoins et votre budget.</p>
-              <div className="mt-6 text-center">
-                <div className="bg-gray-100 text-gray-600 px-6 py-2 rounded-full inline-flex items-center">
-                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"/>
-                  </svg>
-                  Durée : 2-5 jours
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-lg relative">
-              <div className="absolute -top-4 -left-4 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold">3</div>
-              <h3 className="text-xl font-bold mb-4 text-blue-600">Proposition détaillée</h3>
-              <p className="text-gray-600">Présentation de la solution recommandée avec un planning de réalisation et un budget détaillé.</p>
-              <div className="mt-6 text-center">
-                <div className="bg-gray-100 text-gray-600 px-6 py-2 rounded-full inline-flex items-center">
-                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                  </svg>
-                  Démarrage rapide
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Process />
 
 
       {/* Features Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-16">Pourquoi nous ?</h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+
+            <FeatureCard
+              icon={<Zap className="h-6 w-6" />}
+              title="Approche pragmatique"
+              description="Nous privilégions une approche lean et agile pour maximiser la valeur de votre investissement"
+            />
             <FeatureCard
               icon={<Code2 className="h-6 w-6" />}
-              title="Garantie à vie"
+              title="Garantie zéro bug"
               description="Nous corrigeons gratuitement les bugs de notre fait, sans limite dans le temps"
             />
             <FeatureCard
@@ -271,16 +235,6 @@ function App() {
                 >
                   Planifier une consultation
                 </button>
-                <div className="absolute -top-8 left-1/2 -translate-x-1/2 transform -rotate-6 scale-90">
-                  <div className="bg-gradient-to-b from-amber-700 to-amber-900 text-white px-3 py-1.5 rounded border-2 border-amber-950 shadow-lg" 
-                       style={{
-                         fontFamily: "'Comic Sans MS', cursive",
-                         textShadow: '1px 1px 0 rgba(0,0,0,0.3)',
-                         boxShadow: '2px 2px 5px rgba(0,0,0,0.2)'
-                       }}>
-                    <span className="text-xs font-bold whitespace-nowrap">C'est gratuit !</span>
-                  </div>
-                </div>
               </div>
               <span className="text-lg font-medium">ou</span>
               <button 
@@ -394,5 +348,3 @@ function FeatureCard({ icon, title, description }: { icon: React.ReactNode; titl
     </div>
   );
 }
-
-export default App;
