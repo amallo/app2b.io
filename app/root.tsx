@@ -26,7 +26,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
-        <script defer src="https://cloud.umami.is/script.js" data-website-id="8206b60c-0952-45c8-b726-b0fbe4b46039"></script>
+        <script defer src="/unami" data-website-id="8206b60c-0952-45c8-b726-b0fbe4b46039"></script>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
