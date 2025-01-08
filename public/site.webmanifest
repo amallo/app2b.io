@@ -1,6 +1,6 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "APP2B Toolbox",
+  "short_name": "APP2B",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
