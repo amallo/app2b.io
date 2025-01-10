@@ -12,6 +12,7 @@ import { useRef } from 'react';
 import { translations } from '../translations';
 import { useLanguage } from '../hooks/useLanguage';
 import Process from '../components/process';
+import Hero from "~/components/Hero";
 
 export default function Index() {
   const containerRef = useRef(null);
@@ -42,60 +43,7 @@ export default function Index() {
       </div>
 
       {/* Hero Section - Ajout d'animation */}
-      <header className="container mx-auto px-6 py-16 md:py-24 relative">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto text-center"
-        >
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 relative">
-            <span className="text-blue-600">app2b</span>
-            <span className="relative inline-block ml-3 transform rotate-2 group hover:scale-110 transition-all duration-300">
-              <span className="absolute -rotate-3 text-gray-800/10 select-none transition-all duration-300 group-hover:-rotate-6" 
-                style={{
-                  textShadow: '3px 3px 6px rgba(0,0,0,0.2)',
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                Digital Toolbox
-              </span>
-              <span className="relative inline-block text-gray-900 border-4 border-gray-900 px-4 py-1 rounded-lg transition-all duration-300 group-hover:rotate-4" 
-                style={{
-                  textShadow: '2px 2px 4px rgba(0,0,0,0.2)',
-                  WebkitTextStroke: '1.5px black',
-                  fontFamily: "'Poppins', sans-serif"
-                }}>
-                Digital Toolbox
-              </span>
-            </span>
-          </h1>
-          <p className="text-xl text-gray-600 mb-8">
-            {t.hero.subtitle}
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="font-semibold text-lg mb-2 text-blue-600">Transparence totale</h3>
-              <p className="text-gray-600">Pas d'effet tunnel : nous communiquons très régulièrement sur l'avancée de votre projet</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="font-semibold text-lg mb-2 text-blue-600">Qualité garantie</h3>
-              <p className="text-gray-600">Pas de bugs : vous avez payé pour un produit fini et fonctionnel </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="font-semibold text-lg mb-2 text-blue-600">Budget maîtrisé</h3>
-              <p className="text-gray-600">Pas de coûts cachés : nous respectons nos engagements, le budget convenu en fait partie</p>
-            </div>
-          </div>
-          <button
-            onClick={() => {
-              document.getElementById('ready-to-transform')?.scrollIntoView({ behavior: 'smooth' });
-            }}
-            className="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold inline-flex items-center hover:bg-blue-700 transition-colors cursor-pointer"
-          >
-            {t.hero.cta} <ChevronRight className="ml-2 h-5 w-5" />
-          </button>
-        </motion.div>
-      </header>
+      <Hero />
 
       {/* Services Section */}
       <section className="py-20">
@@ -130,9 +78,9 @@ export default function Index() {
             <ServiceCard
               icon={<Workflow className="h-12 w-12 hover:animate-pulse hover:rotate-180 hover:text-emerald-400 transition-all duration-700" />}
               title="Automatisation"
-              description="Gagnez du temps et optimisez votre activité avec des solutions d’automatisation sur mesure pour PME : facturation, relances, gestion client… nous simplifions votre quotidien."
+              description="Gagnez du temps et optimisez votre activité avec des solutions d’automatisation sur mesure pour PME : facturation, relances, gestion client… nous simplifions votre quotidien et vous faisons gagner du temps."
               features={[
-                "Collecte automatique de vos données",
+                "Utilisation d'outils no-code(*)",
                 "Déclenchement automatique",
                 "Synchronization de données"
               ]}
@@ -198,22 +146,22 @@ export default function Index() {
             <FeatureCard
               icon={<Zap className="h-6 w-6" />}
               title="Approche pragmatique"
-              description="Nous privilégions une approche lean et agile pour maximiser la valeur de votre investissement"
-            />
-            <FeatureCard
-              icon={<Code2 className="h-6 w-6" />}
-              title="Garantie zéro bug"
-              description="Nous corrigeons gratuitement les bugs de notre fait, sans limite dans le temps"
+              description="Nous vous orientons vers la solution la plus adaptée à votre besoin immédiat."
             />
             <FeatureCard
               icon={<Boxes className="h-6 w-6" />}
               title="Transparence totale"
-              description="Si nous ne pouvons pas vous aider, nous vous recommanderons un partenaire de confiance"
+              description="Si nous ne pouvons pas vous aider, nous vous recommanderons un partenaire de confiance."
+            />
+            <FeatureCard
+              icon={<Code2 className="h-6 w-6" />}
+              title="Garantie zéro bug"
+              description="Nous corrigeons gratuitement les bugs de notre fait, sans limite dans le temps."
             />
             <FeatureCard
               icon={<Shield className="h-6 w-6" />}
               title="Confidentialité"
-              description="Nous prenons à coeur les enjeux de confidentialité et de protection de la vie privée"
+              description="Nous prenons à coeur les enjeux de confidentialité et de protection de la vie privée."
             />
           </div>
         </div>
@@ -225,7 +173,7 @@ export default function Index() {
           <div className="bg-blue-600 rounded-2xl p-12 text-center text-white">
             <h2 className="text-3xl font-bold mb-6">Prêt à transformer votre entreprise ?</h2>
             <p className="text-lg mb-8 max-w-2xl mx-auto">
-              Discutons ensemble de la façon dont nos outils peuvent aider.
+              Discutons ensemble de la façon dont nos outils peuvent vous aider.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <div className="relative">
@@ -244,7 +192,7 @@ export default function Index() {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                 </svg>
-                Envoyez-nous un message
+                Nous parler de votre projet
               </button>
             </div>
           </div>
