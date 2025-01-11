@@ -60,20 +60,20 @@ export default function Index() {
                 features={[
                   "Autour de 10 pages",
                   "Fonctionnalités à la carte",
-                  "Prise en compte du SEO",
-                  "Hébergement de votre choix",
+                  "Référencement (SEO naturel)",
+                  "Déploiement sur votre hébergeur préféré",
                 ]}
                 bgColor="from-blue-500 to-blue-600"
                 cta="A partir de 1000€ H.T"
               />
               <ServiceCard
                 icon={<Smartphone className="h-12 w-12 hover:animate-bounce hover:rotate-12 hover:text-purple-400 transition-all duration-300" />}
-                title={'Applications sur mesure'}
-                description={'Une application pour fidéliser vos clients, simplifier vos processus ou augmenter votre visibilité ? Nous le faisons parfaitement pour Android, iOS et sur le web.'}
+                title={'Application sur mesure'}
+                description={'Une application web ou mobile pour fidéliser vos clients, simplifier vos processus ou augmenter votre visibilité.'}
                 features={[
                   "Développement iOS & Android",
-                  "Ou développement Web",
-                  "Hébergement sur votre hébergeur préféré",
+                  "Développement Web",
+                  "Déploiement sur votre hébergeur préféré",
                 ]}
                 bgColor="from-purple-500 to-purple-600"
                 cta="Discutons-en"
@@ -81,11 +81,11 @@ export default function Index() {
               <ServiceCard
                 icon={<Workflow className="h-12 w-12 hover:animate-pulse hover:rotate-180 hover:text-emerald-400 transition-all duration-700" />}
                 title="Automatisation"
-                description="Gagnez du temps et optimisez votre activité avec des solutions d’automatisation sur mesure pour PME : facturation, relances, gestion client… nous simplifions votre quotidien et vous faisons gagner du temps."
+                description="Des outils d'exécution pour automatiser les flux de travail de votre PME : facturation, relances, gestion client…"
                 features={[
-                  "Utilisation d'outils no-code(*)",
-                  "Déclenchement automatique",
-                  "Synchronization de données"
+                  "Synchronization et analyse des données",
+                  "Déclenchement automatique d'agents multi-tâches",
+                  "Branchement à vos propres logiciels"
                 ]}
                 bgColor="from-emerald-500 to-emerald-600"
                 cta="Discutons-en"
@@ -102,7 +102,7 @@ export default function Index() {
               <div className="bg-white rounded-2xl p-8 shadow-xl">
                 <div className="space-y-6">
                   <p className="text-lg text-gray-700 leading-relaxed">
-                  Nous sommes deux ingénieurs passionnés par la technologie, forts de plus de 10 ans d'expérience dans la conception de solutions informatiques pour des startups innovantes et des grands comptes exigeants.
+                    Nous sommes deux ingénieurs passionnés par les nouvelles technologie, forts de plus de 10 ans d'expérience dans la conception de solutions informatiques pour des startups innovantes et des grands comptes exigeants.
                   </p>
                   <div className="flex items-start space-x-4 py-4">
                     <div className="flex-shrink-0">
