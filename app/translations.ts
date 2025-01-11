@@ -2,7 +2,8 @@ export const translations = {
   en: {
     hero: {
       subtitle: "Nous créons des solutions numériques sur mesure pour les PME et les associations. Développement d'applications, automatisation de vos tâches les plus chronophages, et bien plus encore : faites confiance à votre partenaire technique dédié.",
-      cta: "Commencer"
+      cta: "Commencer",
+      cta2: "Prendre rendez-vous"
     },
     services: {
       title: "Nos Services",
@@ -33,7 +34,8 @@ export const translations = {
   fr: {
     hero: {
       subtitle: "Nous créons des solutions numériques sur mesure pour les petites entreprises. Développement d'applications, automatisation de vos tâches les plus chronophages, et bien plus encore : faites confiance à votre partenaire technique dédié.",
-      cta: "Commencer"
+      cta: "Commencer",
+      cta2: "Prendre rendez-vous"
     },
     services: {
       title: "Nos Services",
