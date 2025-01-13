@@ -19,7 +19,7 @@ export default function Hero() {
         </h1>
       </div>
       <p className="text-xl text-gray-600 mb-8">
-        <strong>APP2B aide les PME et les associations à créer des solutions numériques optimisées et adaptées à leur budget. </strong>
+        <strong>APP2B aide les PME et les associations à créer des solutions numériques optimisées et adaptées à leur budget. Nous réalisons des sites vitrines, des applications web / mobiles et nous automatisons les flux de travail.</strong>
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
         <div className="p-6 rounded-lg bg-gray-100 border-l-2">

@@ -13,6 +13,7 @@ import { translations } from '../translations';
 import { useLanguage } from '../hooks/useLanguage';
 import Process from '../components/process';
 import Hero from "~/components/Hero";
+import { About } from "~/components/About";
 
 export default function Index() {
   const containerRef = useRef(null);
@@ -58,10 +59,11 @@ export default function Index() {
                 title="Site vitrine"
                 description="Un site web élégant et réactif qui convertit vos visiteurs en clients."
                 features={[
-                  "Autour de 10 pages",
-                  "Fonctionnalités à la carte",
+                  "Choisissez parmi nos modèles de site",
+                  "Formulaire de contact",
+                  "Prise de rendez-vous (Calendrier)",
                   "Référencement (SEO naturel)",
-                  "Déploiement sur votre hébergeur préféré",
+                  "Installation chez votre hébergeur préféré",
                 ]}
                 bgColor="from-blue-500 to-blue-600"
                 cta="A partir de 1000€ H.T"
@@ -69,22 +71,23 @@ export default function Index() {
               <ServiceCard
                 icon={<Smartphone className="h-12 w-12 hover:animate-bounce hover:rotate-12 hover:text-purple-400 transition-all duration-300" />}
                 title={'Application sur mesure'}
-                description={'Une application web ou mobile pour fidéliser vos clients, simplifier vos processus ou augmenter votre visibilité.'}
+                description={'Besoin d\'une application Web ou Mobile taillée pour votre activité ?'}
                 features={[
-                  "Développement iOS & Android",
-                  "Développement Web",
-                  "Déploiement sur votre hébergeur préféré",
+                  "Validation à l'aide de maquettes",
+                  "Développement de l'application",
+                  "Hébergement cloud ou sur les stores Android & Apple",
                 ]}
                 bgColor="from-purple-500 to-purple-600"
                 cta="Discutons-en"
               />
               <ServiceCard
                 icon={<Workflow className="h-12 w-12 hover:animate-pulse hover:rotate-180 hover:text-emerald-400 transition-all duration-700" />}
-                title="Automatisation"
+                title="Automatisation & IA"
                 description="Des outils d'exécution pour automatiser les flux de travail de votre PME : facturation, relances, gestion client…"
                 features={[
                   "Synchronization et analyse des données",
                   "Déclenchement automatique d'agents multi-tâches",
+                  "Intégration de traitement IA",
                   "Branchement à vos propres logiciels"
                 ]}
                 bgColor="from-emerald-500 to-emerald-600"
@@ -95,46 +98,7 @@ export default function Index() {
         </section>
 
         {/* About Section */}
-        <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-12">Qui sommes-nous ?</h2>
-              <div className="bg-white rounded-2xl p-8 shadow-xl">
-                <div className="space-y-6">
-                  <p className="text-lg text-gray-700 leading-relaxed">
-                    Nous sommes deux ingénieurs passionnés par les nouvelles technologie, forts de plus de 10 ans d'expérience dans la conception de solutions informatiques pour des startups innovantes et des grands comptes exigeants.
-                  </p>
-                  <div className="flex items-start space-x-4 py-4">
-                    <div className="flex-shrink-0">
-                      <div className="bg-blue-100 p-3 rounded-lg">
-                        <Users className="h-6 w-6 text-blue-600" />
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">Notre approche PME</h3>
-                      <p className="text-gray-700">
-                        Nous avons choisi de nous concentrer sur les PME car nous croyons en leur potentiel de transformation numérique. Notre expertise nous permet de leur apporter des solutions sur mesure, efficaces et abordables.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4 py-4">
-                    <div className="flex-shrink-0">
-                      <div className="bg-blue-100 p-3 rounded-lg">
-                        <Zap className="h-6 w-6 text-blue-600" />
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">Notre philosophie</h3>
-                      <p className="text-gray-700">
-                        Nous privilégions les cycles de décision courts et la proximité avec nos clients. Notre objectif : produire des solutions de qualité qui ont un impact mesurable et significatif sur votre activité.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <About />
 
         {/* Process Section */}
         <Process />
@@ -163,7 +127,7 @@ export default function Index() {
               />
               <FeatureCard
                 icon={<Shield className="h-6 w-6" />}
-                title="Confidentialité"
+                title="Protection de vos données"
                 description="Nous prenons à coeur les enjeux de confidentialité et de protection de la vie privée."
               />
             </div>
@@ -203,9 +167,9 @@ export default function Index() {
         </section>
 
         {/* Footer */}
-        <footer className="bg-gray-900 text-gray-300 py-12 text-center">
+        <footer className="bg-gray-900 text-gray-300 py-6 text-center">
           <p>&copy; 2024 app2b. Tous droits réservés.</p>
-          <p className="text-sm mt-2 text-gray-500">Analyses par <a href="https://umami.is" className="hover:text-white">umami.is</a> - Conforme RGPD</p>
+          <p className="text-sm mt-2 text-gray-500">Analytique avec par <a href="https://umami.is" className="hover:text-white">umami.is</a> (Conforme RGPD) </p>
         </footer>
       </div>
     </div>
