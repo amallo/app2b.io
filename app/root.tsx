@@ -37,7 +37,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <link rel="manifest" href="/site.webmanifest" />
         <Meta />
         <Links />
-        <title>APP2B La boîte à outils de votre PME</title>
+        <title>APP2B - Concepteurs d'application Web & Mobile pour votre PME</title>
       </head>
       <body>
         {children}

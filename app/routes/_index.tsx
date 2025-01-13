@@ -2,25 +2,32 @@ import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "APP2B la boîte à outils de votre PME" },
-    { name: "description", content: "APP2B la boîte à outils de votre cabinet d'avocat, association, artisan, profession libérale" },
+    { title: "APP2B - Concepteurs d'application Web & Mobile pour votre PME" },
+    { name: "description", content: "APP2B - Concepteurs d'application Web & Mobile pour artisans, cabinet d'avocat, profession libérales et réglementées" },
   ];
 };
-import {Shield, Code2, Smartphone, Workflow, Globe2, Boxes, Users, Zap, ArrowRight } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+
 import { useRef } from 'react';
+import { Shield, Code2, Smartphone, Workflow, Globe2, Boxes, Zap, ArrowRight } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+
 import { translations } from '../translations';
 import { useLanguage } from '../hooks/useLanguage';
-import Process from '../components/process';
-import Hero from "~/components/Hero";
+
+import { Header } from "~/components/Header";
+import { Footer } from "~/components/Footer";
+
+import { Process } from '~/components/Process';
+import { Hero } from "~/components/Hero";
 import { About } from "~/components/About";
+
 
 export default function Index() {
   const containerRef = useRef(null);
   const { scrollY } = useScroll();
   const language = useLanguage();
   const t = translations[language as keyof typeof translations];
-  
+
   const headerBackground = useTransform(
     scrollY,
     [0, 100],
@@ -28,22 +35,7 @@ export default function Index() {
   );
   return (
     <div ref={containerRef} className="min-h-screen bg-white to-red relative overflow-hidden">
-      <motion.div 
-        style={{ 
-          backgroundColor: headerBackground,
-          borderBottom: useTransform(
-            scrollY,
-            [0, 100],
-            ['0px solid rgba(0,0,0,0)', '1px solid rgba(0,0,0,0.1)']
-          ),
-        }}
-        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm py-4 px-6"
-      >
-        <div className="flex flex-row items-center gap-2 max-w-7xl mx-auto">
-          <img src="logox128-bg-transparent.png" className="h-12 object-cover" />
-          <span className="text-2xl font-bold italic text-gray-600">APP2B</span>
-        </div>
-      </motion.div>
+      <Header />
 
       <div className="pt-24">
         {/* Hero Section - Ajout d'animation */}
@@ -144,20 +136,20 @@ export default function Index() {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <div className="relative">
-                  <button 
-                    onClick={() => window.open('https://cal.com/audie-malloggia-3jwiix/')} 
+                  <button
+                    onClick={() => window.open('https://cal.com/audie-malloggia-3jwiix/')}
                     className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
                   >
                     Planifier une consultation
                   </button>
                 </div>
                 <span className="text-lg font-medium">ou</span>
-                <button 
+                <button
                   onClick={() => window.location.href = 'mailto:audie@app2b.io?subject=Prestation'}
                   className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center gap-2"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   Nous parler de votre projet
                 </button>
@@ -166,11 +158,8 @@ export default function Index() {
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="bg-gray-900 text-gray-300 py-6 text-center">
-          <p>&copy; 2024 app2b. Tous droits réservés.</p>
-          <p className="text-sm mt-2 text-gray-500">Analytique avec par <a href="https://umami.is" className="hover:text-white">umami.is</a> (Conforme RGPD) </p>
-        </footer>
+        <Footer />
+
       </div>
     </div>
   );
