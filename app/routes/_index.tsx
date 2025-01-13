@@ -87,7 +87,7 @@ export default function Index() {
                 features={[
                   "Synchronization et analyse des données",
                   "Déclenchement automatique d'agents multi-tâches",
-                  "Intégration de traitement IA",
+                  "Intégration de modèlesIA",
                   "Branchement à vos propres logiciels"
                 ]}
                 bgColor="from-emerald-500 to-emerald-600"
