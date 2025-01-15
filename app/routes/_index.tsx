@@ -9,7 +9,7 @@ export const meta: MetaFunction = () => {
 
 import { useRef } from 'react';
 import { Shield, Code2, Smartphone, Workflow, Globe2, Boxes, Zap, ArrowRight } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useScroll, useTransform } from 'framer-motion';
 
 import { translations } from '../translations';
 import { useLanguage } from '../hooks/useLanguage';
