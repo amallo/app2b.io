@@ -2,208 +2,165 @@ import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "APP2B Toolbox" },
-    { name: "description", content: "Welcome to APP2B Toolbox !" },
+    { title: "APP2B - Concepteurs d'application Web & Mobile pour votre PME" },
+    { name: "description", content: "APP2B - Concepteurs d'application Web & Mobile pour artisans, cabinet d'avocat, profession libérales et réglementées" },
   ];
 };
-import {Shield, Code2, Smartphone, Workflow, ChevronRight, Globe2, Boxes, Users, Zap, ArrowRight } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+
 import { useRef } from 'react';
+import { Shield, Code2, Smartphone, Workflow, Globe2, Boxes, Zap, ArrowRight } from 'lucide-react';
+import { useScroll, useTransform } from 'framer-motion';
+
 import { translations } from '../translations';
 import { useLanguage } from '../hooks/useLanguage';
-import Process from '../components/process';
-import Hero from "~/components/Hero";
+
+import { Header } from "~/components/Header";
+import { Footer } from "~/components/Footer";
+
+import { Process } from '~/components/Process';
+import { Hero } from "~/components/Hero";
+import { About } from "~/components/About";
+
 
 export default function Index() {
   const containerRef = useRef(null);
   const { scrollY } = useScroll();
   const language = useLanguage();
   const t = translations[language as keyof typeof translations];
-  
-  const y1 = useTransform(scrollY, [0, 1000], [0, 200]);
-  const y2 = useTransform(scrollY, [0, 1000], [0, -200]);
-  const y3 = useTransform(scrollY, [0, 1000], [0, 100]);
 
+  const headerBackground = useTransform(
+    scrollY,
+    [0, 100],
+    ['rgba(255, 255, 255, 0)', 'rgba(250, 250, 230, 0.9)']
+  );
   return (
-    <div ref={containerRef} className="min-h-screen bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
-      {/* Motifs géométriques en arrière-plan avec parallaxe */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div 
-          style={{ y: y1 }}
-          className="absolute -top-32 left-1/4 w-[500px] h-[500px] bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-80 animate-blob" 
-        />
-        <motion.div 
-          style={{ y: y2 }}
-          className="absolute -top-32 right-1/4 w-[400px] h-[400px] bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-80 animate-blob animation-delay-2000" 
-        />
-        <motion.div 
-          style={{ y: y3 }}
-          className="absolute -bottom-32 left-1/2 w-[450px] h-[450px] bg-emerald-200 rounded-full mix-blend-multiply filter blur-xl opacity-80 animate-blob animation-delay-4000" 
-        />
-      </div>
+    <div ref={containerRef} className="min-h-screen bg-white to-red relative overflow-hidden">
+      <Header />
 
-      {/* Hero Section - Ajout d'animation */}
-      <Hero />
+      <div className="pt-24">
+        {/* Hero Section - Ajout d'animation */}
+        <Hero />
 
-      {/* Services Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-16">{t.services.title}</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <ServiceCard
-              icon={<Globe2 className="h-12 w-12 hover:animate-spin hover:text-blue-400 transition-all duration-300" />}
-              title="Site vitrine"
-              description="Des sites web élégants et réactifs qui convertissent les visiteurs en clients."
-              features={[
-                "Environ 10 pages",
-                "Choisissez vos fonctionnalités",
-                "SEO (référencement naturel)",
-                "Déploiement sur votre hébergeur préféré",
-              ]}
-              bgColor="from-blue-500 to-blue-600"
-              cta="A partir de 1000€ H.T"
-            />
-            <ServiceCard
-              icon={<Smartphone className="h-12 w-12 hover:animate-bounce hover:rotate-12 hover:text-purple-400 transition-all duration-300" />}
-              title={'Applications sur mesure'}
-              description={'Une application pour fidéliser vos clients, simplifier vos processus ou augmenter votre visibilité ? Nous le faisons parfaitement pour Android, iOS et sur le web.'}
-              features={[
-                "Développement iOS & Android",
-                "Ou développement Web",
-                "Hébergement sur votre hébergeur préféré",
-              ]}
-              bgColor="from-purple-500 to-purple-600"
-              cta="Discutons-en"
-            />
-            <ServiceCard
-              icon={<Workflow className="h-12 w-12 hover:animate-pulse hover:rotate-180 hover:text-emerald-400 transition-all duration-700" />}
-              title="Automatisation"
-              description="Gagnez du temps et optimisez votre activité avec des solutions d’automatisation sur mesure pour PME : facturation, relances, gestion client… nous simplifions votre quotidien et vous faisons gagner du temps."
-              features={[
-                "Utilisation d'outils no-code(*)",
-                "Déclenchement automatique",
-                "Synchronization de données"
-              ]}
-              bgColor="from-emerald-500 to-emerald-600"
-              cta="Discutons-en"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">Qui sommes-nous ?</h2>
-            <div className="bg-white rounded-2xl p-8 shadow-xl">
-              <div className="space-y-6">
-                <p className="text-lg text-gray-700 leading-relaxed">
-                Nous sommes deux ingénieurs passionnés par la technologie, forts de plus de 10 ans d'expérience dans la conception de solutions informatiques pour des startups innovantes et des grands comptes exigeants.
-                </p>
-                <div className="flex items-start space-x-4 py-4">
-                  <div className="flex-shrink-0">
-                    <div className="bg-blue-100 p-3 rounded-lg">
-                      <Users className="h-6 w-6 text-blue-600" />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Notre approche PME</h3>
-                    <p className="text-gray-700">
-                      Nous avons choisi de nous concentrer sur les PME car nous croyons en leur potentiel de transformation numérique. Notre expertise nous permet de leur apporter des solutions sur mesure, efficaces et abordables.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4 py-4">
-                  <div className="flex-shrink-0">
-                    <div className="bg-blue-100 p-3 rounded-lg">
-                      <Zap className="h-6 w-6 text-blue-600" />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Notre philosophie</h3>
-                    <p className="text-gray-700">
-                      Nous privilégions les cycles de décision courts et la proximité avec nos clients. Notre objectif : produire des solutions de qualité qui ont un impact mesurable et significatif sur votre activité.
-                    </p>
-                  </div>
-                </div>
-              </div>
+        {/* Services Section */}
+        <section className="py-20">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl font-bold text-center mb-16">{t.services.title}</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <ServiceCard
+                icon={<Globe2 className="h-12 w-12 hover:animate-spin hover:text-blue-400 transition-all duration-300" />}
+                title="Site vitrine"
+                description="Un site web élégant et réactif qui convertit vos visiteurs en clients."
+                features={[
+                  "Choisissez parmi nos modèles de site",
+                  "Formulaire de contact",
+                  "Prise de rendez-vous (Calendrier)",
+                  "Référencement (SEO naturel)",
+                  "Installation chez votre hébergeur préféré",
+                ]}
+                bgColor="from-blue-500 to-blue-600"
+                cta="A partir de 1000€ H.T"
+              />
+              <ServiceCard
+                icon={<Smartphone className="h-12 w-12 hover:animate-bounce hover:rotate-12 hover:text-purple-400 transition-all duration-300" />}
+                title={'Application sur mesure'}
+                description={'Besoin d\'une application Web ou Mobile taillée pour votre activité ?'}
+                features={[
+                  "Validation à l'aide de maquettes",
+                  "Développement de l'application",
+                  "Hébergement cloud ou sur les stores Android & Apple",
+                ]}
+                bgColor="from-purple-500 to-purple-600"
+                cta="Discutons-en"
+              />
+              <ServiceCard
+                icon={<Workflow className="h-12 w-12 hover:animate-pulse hover:rotate-180 hover:text-emerald-400 transition-all duration-700" />}
+                title="Automatisation & IA"
+                description="Des outils d'exécution pour automatiser les flux de travail de votre PME : facturation, relances, gestion client…"
+                features={[
+                  "Synchronization et analyse des données",
+                  "Déclenchement automatique d'agents multi-tâches",
+                  "Intégration de modèles IA",
+                  "Branchement à vos propres logiciels"
+                ]}
+                bgColor="from-emerald-500 to-emerald-600"
+                cta="Discutons-en"
+              />
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Process Section */}
-      <Process />
+        {/* About Section */}
+        <About />
+
+        {/* Process Section */}
+        <Process />
 
 
-      {/* Features Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-16">Pourquoi nous ?</h2>
-          <div className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+        {/* Features Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl font-bold text-center mb-16">Pourquoi nous ?</h2>
+            <div className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto">
 
-            <FeatureCard
-              icon={<Zap className="h-6 w-6" />}
-              title="Approche pragmatique"
-              description="Nous vous orientons vers la solution la plus adaptée à votre besoin immédiat."
-            />
-            <FeatureCard
-              icon={<Boxes className="h-6 w-6" />}
-              title="Transparence totale"
-              description="Si nous ne pouvons pas vous aider, nous vous recommanderons un partenaire de confiance."
-            />
-            <FeatureCard
-              icon={<Code2 className="h-6 w-6" />}
-              title="Garantie zéro bug"
-              description="Nous corrigeons gratuitement les bugs de notre fait, sans limite dans le temps."
-            />
-            <FeatureCard
-              icon={<Shield className="h-6 w-6" />}
-              title="Confidentialité"
-              description="Nous prenons à coeur les enjeux de confidentialité et de protection de la vie privée."
-            />
+              <FeatureCard
+                icon={<Zap className="h-6 w-6" />}
+                title="Approche pragmatique"
+                description="Nous vous orientons vers la solution la mieux adaptée à votre besoin immédiat."
+              />
+              <FeatureCard
+                icon={<Boxes className="h-6 w-6" />}
+                title="Transparence totale"
+                description="Si nous ne pouvons pas vous aider, nous vous recommanderons un partenaire de confiance."
+              />
+              <FeatureCard
+                icon={<Code2 className="h-6 w-6" />}
+                title="Garantie zéro bug"
+                description="Nous corrigeons gratuitement les bugs de notre fait, sans limite dans le temps."
+              />
+              <FeatureCard
+                icon={<Shield className="h-6 w-6" />}
+                title="Protection de vos données"
+                description="Nous prenons à coeur les enjeux de confidentialité et de protection de la vie privée."
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA Section */}
-      <section className="py-20" id="ready-to-transform">
-        <div className="container mx-auto px-6">
-          <div className="bg-blue-600 rounded-2xl p-12 text-center text-white">
-            <h2 className="text-3xl font-bold mb-6">Prêt à transformer votre entreprise ?</h2>
-            <p className="text-lg mb-8 max-w-2xl mx-auto">
-              Discutons ensemble de la façon dont nos outils peuvent vous aider.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <div className="relative">
-                <button 
-                  onClick={() => window.open('https://cal.com/audie-malloggia-3jwiix/')} 
-                  className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
+        {/* CTA Section */}
+        <section className="py-20" id="ready-to-transform">
+          <div className="container mx-auto px-6">
+            <div className="bg-blue-600 rounded-2xl p-12 text-center text-white">
+              <h2 className="text-3xl font-bold mb-6">Prêt à transformer votre entreprise ?</h2>
+              <p className="text-lg mb-8 max-w-2xl mx-auto">
+                Discutons ensemble de la façon dont nos outils peuvent vous aider.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <div className="relative">
+                  <button
+                    onClick={() => window.open('https://cal.com/audie-malloggia-3jwiix/')}
+                    className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
+                  >
+                    Planifier une consultation
+                  </button>
+                </div>
+                <span className="text-lg font-medium">ou</span>
+                <button
+                  onClick={() => window.location.href = 'mailto:audie@app2b.io?subject=Prestation'}
+                  className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center gap-2"
                 >
-                  Planifier une consultation
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  Nous parler de votre projet
                 </button>
               </div>
-              <span className="text-lg font-medium">ou</span>
-              <button 
-                onClick={() => window.location.href = 'mailto:audie@app2b.io?subject=Prestation'}
-                className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center gap-2"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                </svg>
-                Nous parler de votre projet
-              </button>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-gray-300 py-12 text-center">
-        <p>&copy; 2024 app2b. Tous droits réservés.</p>
-        <p className="text-sm mt-2 text-gray-500">Analyses par <a href="https://umami.is" className="hover:text-white">umami.is</a> - Conforme RGPD</p>
-      </footer>
+        <Footer />
+
+      </div>
     </div>
   );
 }
