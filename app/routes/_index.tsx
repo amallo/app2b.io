@@ -158,8 +158,8 @@ export default function Index() {
             <h2 className="text-3xl font-bold text-center mb-16">Questions fréquentes</h2>
             <div className="max-w-3xl mx-auto space-y-8">
               <div className="bg-white rounded-lg p-6 shadow-md">
-                <h3 className="font-bold text-lg mb-3">Comment savoir si mon projet numérique est viable ?</h3>
-                <p className="text-gray-600">Avec plus de 10 ans d'expérience dans le développement d'applications, nous pouvons rapidement évaluer la faisabilité et la pertinence de votre projet. Si nous ne sommes pas les mieux placés pour vous accompagner, nous vous mettrons en relation avec des experts de confiance.</p>
+                <h3 className="font-bold text-lg mb-3">Comment savoir si mon projet numérique est pertinent ?</h3>
+                <p className="text-gray-600">Nous répondons à toutes les demandes de projet que ce soit par <a href="mailto:audie@app2b.io?subject=Demande%20de%20renseignements" className="text-blue-600 hover:underline">mail</a> ou au travers de nos <a href="https://cal.com/audie-malloggia-3jwiix/" className="text-blue-600 hover:underline">consultations gratuites</a>. Nous pouvons rapidement évaluer la faisabilité et la pertinence de votre projet. Si nous ne sommes pas les mieux placés pour vous accompagner, nous vous mettrons en relation avec des experts de confiance.</p>
               </div>
 
               <div className="bg-white rounded-lg p-6 shadow-md">
@@ -169,7 +169,7 @@ export default function Index() {
 
               <div className="bg-white rounded-lg p-6 shadow-md">
                 <h3 className="font-bold text-lg mb-3">Quelle est votre approche de l'Intelligence Artificielle ?</h3>
-                <p className="text-gray-600">Nous intégrons les dernières avancées en IA dans notre processus de développement pour optimiser notre productivité et vous offrir des solutions plus innovantes à des tarifs compétitifs.</p>
+                <p className="text-gray-600">Nous utilisons l'IA comme un assistant pour optimiser notre productivité ou celle de nos clients. Nous gardons cependant le contrôle sur la qualité du code produit car la technologie n'est pas encore assez mature pour remplacer l'expertise humaine.</p>
               </div>
 
               <div className="bg-white rounded-lg p-6 shadow-md">
