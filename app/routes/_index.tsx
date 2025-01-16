@@ -164,7 +164,7 @@ export default function Index() {
 
               <div className="bg-white rounded-lg p-6 shadow-md">
                 <h3 className="font-bold text-lg mb-3">Comment fonctionne votre garantie zéro bug ?</h3>
-                <p className="text-gray-600">Notre garantie zéro bug est incluse dans tous nos devis, sans surcoût. Nous sommes convaincus qu'il est possible de livrer des applications de haute qualité tout en restant compétitifs. Cette garantie vous assure une tranquillité d'esprit totale.</p>
+                <p className="text-gray-600"><a href="/garantie-zero-bug" className="text-blue-600 hover:underline">Notre garantie zéro bug</a> est incluse dans tous nos devis, sans surcoût. Nous sommes convaincus qu'il est possible de livrer des applications de haute qualité tout en restant compétitifs. Cette garantie vous assure une tranquillité d'esprit totale.</p>
               </div>
 
               <div className="bg-white rounded-lg p-6 shadow-md">
