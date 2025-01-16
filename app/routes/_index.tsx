@@ -9,7 +9,6 @@ export const meta: MetaFunction = () => {
 
 import { useRef } from 'react';
 import { Shield, Code2, Smartphone, Workflow, Globe2, Boxes, Zap, ArrowRight } from 'lucide-react';
-import { useScroll, useTransform } from 'framer-motion';
 
 import { translations } from '../translations';
 import { useLanguage } from '../hooks/useLanguage';
@@ -24,15 +23,9 @@ import { About } from "~/components/About";
 
 export default function Index() {
   const containerRef = useRef(null);
-  const { scrollY } = useScroll();
   const language = useLanguage();
   const t = translations[language as keyof typeof translations];
 
-  const headerBackground = useTransform(
-    scrollY,
-    [0, 100],
-    ['rgba(255, 255, 255, 0)', 'rgba(250, 250, 230, 0.9)']
-  );
   return (
     <div ref={containerRef} className="min-h-screen bg-white to-red relative overflow-hidden">
       <Header />
@@ -226,11 +219,11 @@ function ServiceCard({ icon, title, description, features, bgColor, cta }: { ico
   );
 }
 
-function FeatureCard({ icon, title, description, link }: { 
-  icon: React.ReactNode; 
-  title: string; 
+function FeatureCard({ icon, title, description, link }: {
+  icon: React.ReactNode;
+  title: string;
   description: string;
-  link?: string 
+  link?: string
 }) {
   const content = (
     <div className="text-center">
