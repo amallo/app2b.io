@@ -116,6 +116,7 @@ export default function Index() {
                 icon={<Code2 className="h-6 w-6" />}
                 title="Garantie zéro bug"
                 description="Nous corrigeons gratuitement les bugs de notre fait, sans limite dans le temps."
+                link="/garantie-zero-bug"
               />
               <FeatureCard
                 icon={<Shield className="h-6 w-6" />}
@@ -153,6 +154,34 @@ export default function Index() {
                   </svg>
                   Nous parler de votre projet
                 </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-6">
+            <h2 className="text-3xl font-bold text-center mb-16">Questions fréquentes</h2>
+            <div className="max-w-3xl mx-auto space-y-8">
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <h3 className="font-bold text-lg mb-3">Comment savoir si mon projet numérique est viable ?</h3>
+                <p className="text-gray-600">Avec plus de 10 ans d'expérience dans le développement d'applications, nous pouvons rapidement évaluer la faisabilité et la pertinence de votre projet. Si nous ne sommes pas les mieux placés pour vous accompagner, nous vous mettrons en relation avec des experts de confiance.</p>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <h3 className="font-bold text-lg mb-3">Comment fonctionne votre garantie zéro bug ?</h3>
+                <p className="text-gray-600">Notre garantie zéro bug est incluse dans tous nos devis, sans surcoût. Nous sommes convaincus qu'il est possible de livrer des applications de haute qualité tout en restant compétitifs. Cette garantie vous assure une tranquillité d'esprit totale.</p>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <h3 className="font-bold text-lg mb-3">Quelle est votre approche de l'Intelligence Artificielle ?</h3>
+                <p className="text-gray-600">Nous intégrons les dernières avancées en IA dans notre processus de développement pour optimiser notre productivité et vous offrir des solutions plus innovantes à des tarifs compétitifs.</p>
+              </div>
+
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <h3 className="font-bold text-lg mb-3">Pourquoi faire appel à vous plutôt qu'utiliser directement l'IA ?</h3>
+                <p className="text-gray-600">Si l'IA est un outil puissant pour la génération de code, notre expertise est essentielle pour créer des applications robustes et pérennes. Nous savons exploiter l'IA tout en garantissant la qualité, la maintenabilité et l'évolutivité de votre projet sur le long terme.</p>
               </div>
             </div>
           </div>
@@ -197,14 +226,33 @@ function ServiceCard({ icon, title, description, features, bgColor, cta }: { ico
   );
 }
 
-function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
-  return (
+function FeatureCard({ icon, title, description, link }: { 
+  icon: React.ReactNode; 
+  title: string; 
+  description: string;
+  link?: string 
+}) {
+  const content = (
     <div className="text-center">
       <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
         {icon}
       </div>
       <h3 className="font-bold mb-2">{title}</h3>
       <p className="text-gray-600 text-sm">{description}</p>
+    </div>
+  );
+
+  return (
+    <div>
+      {content}
+      {link && (
+        <div className="mt-4">
+          <a href={link} className="text-blue-600 hover:text-blue-700 text-sm flex items-center justify-center">
+            En savoir plus
+            <ArrowRight className="h-3 w-3 ml-1" />
+          </a>
+        </div>
+      )}
     </div>
   );
 }
